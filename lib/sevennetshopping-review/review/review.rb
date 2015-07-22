@@ -39,7 +39,11 @@ module SevenNetShoppingReview
     end
 
     def helpful_count
-      @helpful_count ||= Int(@html.css('.revEntryAnsNum').first.text)
+      unless @helpful_count
+        match_data = /(?<helpful_count>\d+)人.+/.match(@html.css(".detail_review_average > .detail_item_secondary_status").first)
+        @helpful_count = Int(match_data[:helpful_count].to_i)
+      end
+      @helpful_count
     end
 
     def to_hash
