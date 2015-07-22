@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'sevennetshopping-review/review/version'
+require 'sevennetshopping/review/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "sevennetshopping-review"
-  spec.version       = SevenNetShoppingReview::VERSION
+  spec.version       = Sevennetshopping::Review::VERSION
   spec.authors       = ["Shunpei Kobayashi"]
   spec.email         = ["skonb@me.com"]
 
