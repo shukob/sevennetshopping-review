@@ -16,7 +16,7 @@ module Sevennetshopping
       html = open(url).read.encode("UTF-8")
       doc = Nokogiri::HTML.parse(html)
       doc.css(".detail_64component_left").each do |review_html|
-        reviews << Review::Review.new(review_html)
+        reviews << ::Sevennetshopping::Review::Review.new(review_html)
       end
       # go to next page
 
